@@ -831,3 +831,21 @@ const char* pci_get_prog_if_str(
 	}
 	return "-";
 }
+
+const char* pci_get_interrupt_pin_str(
+	uint8_t interrupt_pin)
+{
+	switch (interrupt_pin) {
+		case 0:
+			return "N/A";
+		case 1:
+			return "INTA#";
+		case 2:
+			return "INTB#";
+		case 3:
+			return "INTC#";
+		case 4:
+			return "INTD#";
+	}
+	return unknown;
+}

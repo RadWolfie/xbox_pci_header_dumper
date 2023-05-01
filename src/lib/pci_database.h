@@ -26,3 +26,6 @@ const char* pci_get_prog_if_str(
 	uint8_t class_code,
 	uint8_t subclass,
 	uint8_t prog_if);
+
+const char* pci_get_interrupt_pin_str(
+	uint8_t interrupt_pin);

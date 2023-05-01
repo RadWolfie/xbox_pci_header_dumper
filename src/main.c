@@ -52,7 +52,7 @@ void pci_dump_header(
 		print("reserved1                  =%04hX", pci_header_standard.reserved1);
 		print("reserved2                  =%08X", pci_header_standard.reserved2);
 		print("interrupt_line             =%02hhX", pci_header_standard.interrupt_line);
-		print("interrupt_pin              =%02hhX", pci_header_standard.interrupt_pin);
+		print("interrupt_pin              =%02hhX %s", pci_header_standard.interrupt_pin, pci_get_interrupt_pin_str(pci_header_standard.interrupt_pin));
 		print("min_grant                  =%02hhX", pci_header_standard.min_grant);
 		print("max_latency                =%02hhX", pci_header_standard.max_latency);
 	}
@@ -81,7 +81,7 @@ void pci_dump_header(
 		print("reserved1                       = %04hX", pci_header_pci2pci_bridge.reserved1);
 		print("expansion_rom_base_address      = %08X", pci_header_pci2pci_bridge.expansion_rom_base_address);
 		print("interrupt_line                  = %02hhX", pci_header_pci2pci_bridge.interrupt_line);
-		print("interrupt_pin                   = %02hhX", pci_header_pci2pci_bridge.interrupt_pin);
+		print("interrupt_pin                   = %02hhX %s", pci_header_pci2pci_bridge.interrupt_pin, pci_get_interrupt_pin_str(pci_header_pci2pci_bridge.interrupt_pin));
 		print("bridge_control                  = %04hX", pci_header_pci2pci_bridge.bridge_control);
 	}
 	else if (header_type == 0x02) {
@@ -104,7 +104,7 @@ void pci_dump_header(
 		print("io_base_address_1                = %08X", pci_header_pci2cardbus_bridge.io_base_address_1);
 		print("io_limit_1                       = %08X", pci_header_pci2cardbus_bridge.io_limit_1);
 		print("interrupt_line                   = %02hhX", pci_header_pci2cardbus_bridge.interrupt_line);
-		print("interrupt_pin                    = %02hhX", pci_header_pci2cardbus_bridge.interrupt_pin);
+		print("interrupt_pin                    = %02hhX %s", pci_header_pci2cardbus_bridge.interrupt_pin, pci_get_interrupt_pin_str(pci_header_pci2cardbus_bridge.interrupt_pin));
 		print("bridge_control                   = %04hX", pci_header_pci2cardbus_bridge.bridge_control);
 		print("subsystem_device_id              = %04hX", pci_header_pci2cardbus_bridge.subsystem_device_id);
 		print("subsystem_vendor_id              = %04hX", pci_header_pci2cardbus_bridge.subsystem_vendor_id);
