@@ -117,10 +117,6 @@ void pci_dump_header(
 	do {
 		pci_get = pci_read_config_32(bus, device, func, offset);
 		print("%02hhX.%02hhX:%hhX.%02hhX=%08X", bus, device, func, offset, pci_get);
-		// TODO: remove break below once fully done.
-		if (offset == 0xFC) {
-			break;
-		}
 		offset += 4;
 	} while (offset != 0);
 	print("==========================\n");
